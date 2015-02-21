@@ -10,9 +10,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
-/**
- * Created by james on 22/02/15.
- */
 public class Harvestable implements IFactoryHarvestable {
     Block block;
 
