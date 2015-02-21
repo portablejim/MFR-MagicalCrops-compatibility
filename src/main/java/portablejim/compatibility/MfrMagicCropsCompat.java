@@ -11,7 +11,7 @@ import net.minecraft.item.ItemSeeds;
 import net.minecraft.launchwrapper.LogWrapper;
 import powercrystals.minefactoryreloaded.MFRRegistry;
 
-@Mod(modid = MfrMagicCropsCompat.MODID, version = MfrMagicCropsCompat.VERSION, dependencies = "after:magicalcrops")
+@Mod(modid = MfrMagicCropsCompat.MODID, version = MfrMagicCropsCompat.VERSION)
 public class MfrMagicCropsCompat
 {
     public static final String MODID = "mfrmagiccropscompat";
