@@ -11,7 +11,7 @@
   "credits": "Streuner91, for the previous version which I used to speed up development",
   "logoFile": "",
   "screenshots": [],
-  "requiredMods": ["MinefactoryReloaded", "magicalcrops"],
+  "requiredMods": ["MineFactoryReloaded", "magicalcrops"],
   "dependencies": ["magicalcrops"],
   "useDependencyInformation": true
 }
