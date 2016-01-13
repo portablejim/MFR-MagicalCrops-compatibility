@@ -23,32 +23,39 @@ public class MfrMagicCropsCompat
     {
         LogWrapper.makeLog("Minefactory-MagicalCrops-compatibility");
 
+        int countPlantableReged = 0;
         //noinspection unchecked
         for(Object itemObject : Item.itemRegistry.getKeys().toArray()) {
             if(itemObject instanceof String) {
                 String itemString = (String) itemObject;
-                if(itemString.startsWith("magicalcrops:magicalcrops_")) {
+                if(itemString.startsWith("magicalcrops:")) {
                     Item item = (Item) Item.itemRegistry.getObject(itemString);
                     if(item instanceof ItemSeeds) {
                         Plantable plantable = new Plantable((ItemSeeds) item);
                         MFRRegistry.registerPlantable(plantable);
                         LogWrapper.fine("Adding %s to the %s list", itemString, "registerPlantable");
+                        countPlantableReged++;
                     }
                 }
             }
         }
+        LogWrapper.fine("Plantable registered count %d", countPlantableReged);
+        
+        int countHarvestableReged = 0;
         for(Object blockObject : Block.blockRegistry.getKeys().toArray()) {
             if(blockObject instanceof String) {
                 String blockString = (String) blockObject;
-                if (blockString.startsWith("magicalcrops:magicalcrops_")) {
+                if (blockString.startsWith("magicalcrops:")) {
                     Block block = (Block) Block.blockRegistry.getObject(blockString);
                     if (block instanceof BlockCrops || block instanceof BlockBush) {
                         Harvestable harvestable = new Harvestable(block);
                         MFRRegistry.registerHarvestable(harvestable);
                         LogWrapper.fine("Adding %s to the %s list", blockString, "registerHarvestable");
+                        countHarvestableReged++;
                     }
                 }
             }
         }
+        LogWrapper.fine("Harvestable registered count %d", countHarvestableReged);
     }
 }
